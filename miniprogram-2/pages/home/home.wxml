@@ -1,0 +1,44 @@
+<view class="page">
+  <!-- 轮播图 -->
+  <force-swiper list="{{ swiperList }}" style="width: 100vw; height: 560rpx;" dots-style="left: 50%;bottom: 50rpx;" round />
+
+  <!-- 会员卡片 -->
+  <view class="member-area">
+    <view class="vip-box">
+      <image src="{{isLogin?'/imgs/mine/宅基.png':'/imgs/mine/未登录.png'}}" mode="" />
+      <view class="meta">
+        <view class="title">{{isLogin?'羽祈':'尊敬的用户'}}</view>
+        <!-- <progress-bar value="{{progress}}" width="350rpx"></progress-bar> -->
+        <view class="track">
+          <view wx:if="{{isLogin}}" class="bar" style="width: 33%;"></view>
+        </view>
+        <view class="tips">{{isLogin?'再升1级可享【升级礼包】等6项权益':'会员可享【限时优惠】等多项权益'}}</view>
+      </view>
+    </view>
+
+    <view wx:if="{{isLogin}}" class="coin-box">
+      <image mode="aspectFill" src="/imgs/home/vip.png" mode="" />
+      <view class="currency"></view>
+    </view>
+    <view wx:if="{{!isLogin}}" class="login-btn" bindtap="gotoLogin">登录</view>
+  </view>
+
+  <!-- 点餐banner -->
+  <view class="menu-banner">
+    <view class="location">
+      <image src="/imgs/home/定位.png" mode="" />
+      <view class="name">吉林长春</view>
+    </view>
+    <image class="menu-card" src="//i1.hdslb.com/bfs/activity-plat/static/20240708/3b3c5705bda98d50983f6f47df360fef/TL10qFlKhw.png@240w_240h.avif" mode="" bind:tap="gotomenu" />
+  </view>
+
+  <view class="banner-list">
+    <image class="banner" src="https://7969-yixiantang-8gfkymtadf6b7244-1339880437.tcb.qcloud.la/weda-uploader/CC94B8387F16924FC63BE334AB34BB51.png?sign=e7173b0f69175a1bd28d904c2dae6673&t=1740127764" mode="" bindtap="showDialog" />
+    <image class="banner" src="https://7969-yixiantang-8gfkymtadf6b7244-1339880437.tcb.qcloud.la/weda-uploader/BA70B88BE0D3151EC486FF03DAB9FF67.png?sign=447f995f48cce8bc2c610bd5012e7e6e&t=1740127759" mode="" bindtap="gotodiscount" />
+    <image class="banner" src="https://7969-yixiantang-8gfkymtadf6b7244-1339880437.tcb.qcloud.la/weda-uploader/5E5A22FBE9CC96C5650B9068110A3496.png?sign=139c5e63eb8272d3821307a2f9853fe1&t=1740127752" mode="" bindtap="onDisplay" />
+  </view>
+</view>
+
+
+<van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}"/>
+<van-dialog id="van-dialog" />

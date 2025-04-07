@@ -1,0 +1,25 @@
+<view class="section">
+  <view wx:if="{{!isArrayEmpty}}" class="section-header">
+    我的订单
+  </view>
+  <view wx:for="{{List}}" class="section-list">
+    <view class="item">
+      <image src="{{item.url}}" mode="" />
+      <view class="info">
+        <view class="name">{{item.name}}</view>
+        <view class="description">{{item.description}}</view>
+        <van-stepper value="{{ 1 }}" value="{{ item.num }}" bind:change="onChange" input-width="50rpx" button-size="40rpx" data-index="{{index}}" integer/>
+        <view class="price">{{item.price}} </view>
+        <view class="add-icon" bind:tap="minus" data-name="{{item.name}}">
+          <image src="/imgs/cart/减号.png" mode="" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{!isArrayEmpty}}" class="box">
+  <view class="buy" bind:tap="buy">结账</view>
+</view>
+
+<cart-empty wx:if="{{isArrayEmpty}}" bind:handleClick="onGotoHome" />

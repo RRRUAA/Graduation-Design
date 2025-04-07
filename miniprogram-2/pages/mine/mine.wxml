@@ -1,0 +1,71 @@
+<view class="page">
+  <view class="user-area">
+    <view class="user-box">
+      <image class="avatar" src="{{isLogin?'/imgs/mine/宅基.png':'/imgs/mine/未登录.png'}}"></image>
+      <view class="name">{{ mobile ? mobile :  '登录获更多会员权益'}}</view>
+    </view>
+    <view wx:if="{{ !mobile }}" class="login-btn" bindtap="login">登录</view>
+    <view wx:if="{{ mobile }}" class="login-btn" bindtap="signin">签到</view>
+  </view>
+  <view class="card-container">
+    <view class="card">
+      <view class="meta">
+        <view class="count">{{isLogin? money : '0'}}</view>
+        <view class="name">人民币</view>
+      </view>
+      <image class="icon" src="/imgs/mine/纸币-06.png"></image>
+    </view>
+    <view class="card">
+      <view class="meta">
+        <view class="count">{{isLogin? note :'0'}}</view>
+        <view class="name">优惠券</view>
+      </view>
+      <image class="icon" src="/imgs/mine/优惠券.png"></image>
+    </view>
+  </view>
+
+  <view class="list-items">
+    <view class="item" bindtap="gotobind">
+      <view class="content">
+        <image class="icon" src="/imgs/mine/兑换码.png" />
+        <view class="label">兑换码</view>
+      </view>
+      <view class="left-arrow">></view>
+    </view>
+    <view class="item" bindtap="gotoaddress">
+      <view class="content">
+        <image class="icon" src="/imgs/mine/项目.png" />
+        <view class="label">地址信息</view>
+      </view>
+      <view class="left-arrow">></view>
+    </view>
+    <view class="item" bindtap="help" data-code="agreement">
+      <view class="content">
+        <image class="icon" src="/imgs/mine/apps.png" />
+        <view class="label">帮助中心</view>
+      </view>
+      <view class="left-arrow">></view>
+    </view>
+    <view class="item" bindtap="showmaker" data-code="xuke">
+      <view class="content">
+        <image class="icon" src="/imgs/mine/信息.png" />
+        <view class="label">联系我们</view>
+      </view>
+      <view class="left-arrow">></view>
+    </view>
+  </view>
+
+  <view class="list-items app-download" bindtap="exit">
+    <view class="item">
+      <view class="content">
+        <image class="icon" src="/imgs/mine/退出.png"></image>
+        <view class="label">退出登录</view>
+      </view>
+      <view class="left-arrow">
+        <view class="tips"></view>
+        >
+      </view>
+    </view>
+  </view>
+</view>
+<van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelect" cancel-text="取消" description="服务时间：365全年无休 9:00-12:00 13:00-15:00"/>

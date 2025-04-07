@@ -1,0 +1,6 @@
+<view class="cart-empty">
+	<image class="cart-img" src="/imgs/cart/购物车.png" />
+	<view class="tip">购物车是空的</view>
+	<view class="btn" bind:tap="handleClick">去点餐</view>
+</view>
+

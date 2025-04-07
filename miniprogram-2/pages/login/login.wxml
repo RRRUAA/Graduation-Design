@@ -1,0 +1,17 @@
+
+<view class="container">
+ <image src="/imgs/authLoginbg.jpg" mode="aspectFill" class="background-image"></image>
+  <!-- 其他内容 -->
+  <view class="header-nav" style="height: 93px;">
+    <view class="header-left" bindtap="goBack">
+      <van-icon name="arrow-left"/>
+    </view>
+    <view class="header-middle">授权登录</view>
+  </view>
+  <button style="width: 270px;" class="footer" bindtap="login">
+    <van-icon name="wechat" size="17px" custom-style="margin-right: 3px"/>授权用户信息
+  </button>
+</view>
+
+
+ 

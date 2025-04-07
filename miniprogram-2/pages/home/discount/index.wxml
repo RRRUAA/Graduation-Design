@@ -1,0 +1,52 @@
+<van-nav-bar title="本周福利集合" left-text="返回" right-text="按钮" left-arrow bind:click-left="onClickLeft" bind:click-right="onClickRight" />
+<view class="container">
+  <view class="item time" style="margin-top: -100rpx;">
+    <view class="title">限时福利</view>
+    <view class="box">
+      <view class="discount_text" style="display: flex;">
+        <view class="data" style="margin-top: 50rpx;">2.1-2.28</view>
+        <view class="text" style="margin-top: 50rpx;">消费满9元，送<text style="color: #e97d7d;">1元优惠券</text></view>
+      </view>
+      <view class="discount_text">
+        <view style="margin-left: 20rpx; margin-top: -70rpx; color: #5398ec;">------------------------------</view>
+      </view>
+    </view>
+
+  </view>
+  <view class="item discount">
+    <view class="title">每周优惠</view>
+    <view class="box">
+      <view class="discount_text" style="display: flex;">
+        <view class="data" style="margin-top: 20rpx;">周四</view>
+        <view class="text" style="margin-top: 20rpx;">总单享<text style="color: #e97d7d;">八折优惠</text></view>
+      </view>
+      <view class="discount_text" style="display: flex;">
+        <view class="data">周日</view>
+        <view class="text">签到享<text style="color: #e97d7d;">二倍经验</text></view>
+      </view>
+      <view class="discount_text">
+        <view style="margin-left: 20rpx; color: #5398ec;">------------------------------</view>
+      </view>
+    </view>
+  </view>
+  <view class="item vip">
+    <view class="title">会员专享</view>
+    <view class="box">
+      <view class="discount_text" style="display: flex;">
+        <view class="data" style="margin-top: 10rpx;">周一</view>
+        <view class="text" style="margin-top: 10rpx;">特色餐品<text style="color: #e97d7d;">八折优惠</text></view>
+      </view>
+      <view class="discount_text" style="display: flex;">
+        <view class="data">周二</view>
+        <view class="text">甜点享受<text style="color: #e97d7d;">八折优惠</text></view>
+      </view>
+      <view class="discount_text" style="display: flex;">
+        <view class="data">周五</view>
+        <view class="text">饮品享受<text style="color: #e97d7d;">七折优惠</text></view>
+      </view>
+      <view class="discount_text">
+        <view style="margin-left: 20rpx; color: #5398ec;">------------------------------</view>
+      </view>
+    </view>
+  </view>
+</view>

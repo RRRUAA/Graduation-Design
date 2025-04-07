@@ -1,0 +1,41 @@
+
+.swiper-container {
+  width: 100%;
+  height: 266rpx;
+  position: relative;
+}
+
+.swiper-container swiper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.swiper-container swiper image {
+  width: 100%;
+  height: 100%;
+}
+
+.dots {
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+  transform: translateX(-50%);
+  display: inline-flex;
+}
+
+.dot {
+  width: 16rpx;
+  height: 16rpx;
+  display: inline-flex;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: 8rpx;
+  transition: all 0.8s;
+}
+
+.dot.active {
+  width: 60rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+  opacity: .57;
+} 

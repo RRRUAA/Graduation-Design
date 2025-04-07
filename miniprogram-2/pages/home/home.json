@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "progress-bar": "../../components/progress-bar/index",
+    "force-swiper": "../../components/force-swiper/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-calendar": "@vant/weapp/calendar/index"
+  },
+  "navigationStyle": "custom"
+}

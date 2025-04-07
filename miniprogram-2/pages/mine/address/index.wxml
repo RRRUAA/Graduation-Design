@@ -1,0 +1,34 @@
+<view class="container">
+  <image src="https://static.igem.wiki/teams/5217/image/yellow.png" mode="aspectFill" class="background-image"></image>
+
+  <view class="header-nav" style="height: 93px;">
+    <view class="header-left" bindtap="goBack">
+      <view class="arrow-left">←</view>
+    </view>
+    <view class="header-middle">地址信息</view>
+  </view>
+
+  <view class="address-container">
+    <view class="address-list" wx:if="{{addressList.length > 0}}">
+      <view wx:for="{{addressList}}">
+        <view class="block">
+          <view class="black">{{item.name}} {{item.phone}}</view>
+          <view class="gray">{{item.option}}/{{item.address}}</view>
+          <image src="/imgs/cart/减号.png" class="image" data-name="{{item.name}}" bind:tap="minus"></image>
+          </view>
+      </view>
+    </view>
+
+    <view wx:else class="no-address">
+      <view style="color: #8e8c8a; font-size: 28rpx;">暂无送餐地址，赶快添加吧</view>
+    </view>
+    <view class="bottom-fixed">
+      <view class="btn-wrap">
+        <view class="address-btn {{addressList.length >= 20 ? 'btn-default':''}}" bind:tap="createHandle">
+          <text>新添送餐地址</text>
+        </view>
+      </view>
+      <view class="footer" wx:if="{{addressList.length >= 20}}">最多支持添加20个送餐地址</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "cart-empty": "/components/cart-empty/index",
+    "van-stepper": "@vant/weapp/stepper/index"
+  },
+  "navigationStyle": "custom"
+}

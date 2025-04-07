@@ -1,0 +1,50 @@
+<view class="container">
+
+  <image src="https://static.igem.wiki/teams/5217/image/yellow.png" mode="aspectFill" class="background-image"></image>
+
+  <view class="header-nav" style="height: 93px;">
+    <view class="header-left" bindtap="goBack">
+      <view class="arrow-left">←</view>
+    </view>
+    <view class="header-middle">新添地址</view>
+  </view>
+
+
+
+
+  <view class="list-items">
+    <view class="item" bindtap="gotobind">
+      <view class="content">
+        <view class="label">用户名</view>
+        <input class="your" type="text" placeholder="您的姓名" bindinput="onNameInput" />
+      </view>
+    </view>
+    <view class="item" bindtap="gotoaddress">
+      <view class="content">
+        <view class="label">手机号</view>
+        <input class="your" type="text" placeholder="您的联系电话" bindinput="onPhoneInput" />
+      </view>
+    </view>
+    <view class="item" bindtap="gotoCustomPage" data-code="agreement">
+      <view class="content">
+        <view class="label">选择市区</view>
+        <!-- 选择市区 -->
+        <van-dropdown-menu>
+          <van-dropdown-item value="{{ value }}" options="{{ option }}"  bind:change="onDropdownChange"/>
+        </van-dropdown-menu>
+      </view>
+    </view>
+    <view class="item" bindtap="gotoCustomPage" data-code="xuke">
+      <view class="content">
+        <view class="label">详细地址</view>
+        <input class="your" type="text" placeholder="精确到门牌号" bindinput="onAddressInput" />
+      </view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class="btn-wrap">
+    <view class="address-btn" disabled="{{isButtonDisabled}}" bindtap="onSubmit">
+      添加
+    </view>
+  </view>
+</view>

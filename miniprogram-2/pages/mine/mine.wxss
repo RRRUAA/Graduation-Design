@@ -1,0 +1,133 @@
+/* pages/mine/mine.wxss */
+
+page {
+  padding-bottom: calc(constant(safe-area-inset-bottom)+170rpx);
+  padding-bottom: calc(env(safe-area-inset-bottom)+170rpx);
+  background-color: rgba(165, 79, 98, .3);
+}
+.page {
+  background: linear-gradient(to bottom, #f1d5dc, #f8f8f8);
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  padding-top: 170rpx;
+}
+
+.user-area {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26rpx;
+}
+
+.user-box {
+  display: flex;
+  align-items: center;
+}
+
+.user-area .avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 80rpx;
+}
+
+.user-area .name {
+  margin-left: 30rpx;
+}
+
+.login-btn {
+  width: 150rpx;
+  height: 62rpx;
+  border-radius: 50rpx;
+  background-color: rgb(230, 35, 61);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25rpx;
+  text-align: center;
+  z-index: 99;
+  font-weight: bold;
+}
+
+.login-btn:active {
+  opacity: 0.6;
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 26rpx;
+}
+
+.card-container .card {
+  width: 330rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  padding: 23rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.meta .count {
+  font-weight: bold;
+}
+
+.meta .name {
+  font-size: 25rpx;
+  color: gray;
+}
+
+.card-container .card .icon {
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.list-items {
+  margin-bottom: 26rpx;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15rpx;
+}
+
+.list-items .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36rpx 30rpx;
+}
+
+.list-items .item .content {
+  display: flex;
+  align-items: center;
+}
+
+.list-items .item .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 25rpx;
+}
+
+.list-items .label {
+  font-size: 26rpx;
+}
+
+.left-arrow {
+  font-size: 20rpx;
+  display: flex;
+}
+
+.tips {
+  margin-right: 10rpx;
+  font-size: 24rpx;
+  color: gray;
+}

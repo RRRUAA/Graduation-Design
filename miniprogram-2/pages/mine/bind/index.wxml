@@ -1,0 +1,19 @@
+<!--pages/usercenter/bind/index.wxml-->
+
+<view class="container">
+  <image src="https://static.igem.wiki/teams/5217/image/yellow.png" mode="aspectFill" class="background-image"></image>
+
+  <view class="header-nav" style="height: 93px;">
+    <view class="header-left" bindtap="goBack">
+      <view class="arrow-left">←</view>
+    </view>
+    <view class="header-middle">兑换</view>
+  </view>
+
+  <view class="footer">
+    <view class="text">请输兑换码</view>
+    <view class="input"><input style="border: 5rpx solid;" placeholder="兑换码" bindinput="onInputChange" value="{{inputValue}}" /></view>
+    <view class="description">输入后获得对应优惠券</view>
+    <button bind:tap="onSubmit">确定</button>
+  </view>
+</view>

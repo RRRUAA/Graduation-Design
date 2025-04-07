@@ -1,0 +1,23 @@
+<van-nav-bar title="账单" left-text="返回" right-text="按钮" left-arrow bind:click-left="onClickLeft" bind:click-right="onClickRight" />
+
+<view class="address-container">
+  <view class="address-list" wx:if="{{addressList.length > 0}}">
+    <view class="text">请选择送餐地址</view>
+    <van-radio-group value="{{ radio-1 }}" bind:change="onChange">
+      <view wx:for="{{addressList}}" wx:for-index="idx">
+        <view class="block">
+          <van-radio name="{{idx}}">
+            <view class="black">{{item.name}} {{item.phone}}</view>
+            <view class="gray">{{item.option}}/{{item.address}}</view>
+          </van-radio>
+        </view>
+      </view>
+    </van-radio-group>
+  </view>
+
+  <view wx:else class="no-address">
+    <view style="color: #8e8c8a; font-size: 28rpx;">暂无送餐地址，请前往我的→地址信息</view>
+  </view>
+</view>
+
+<van-submit-bar price="{{ totalPrice }}" button-text="提交订单" bind:submit="onSubmit" />

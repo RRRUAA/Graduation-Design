@@ -1,0 +1,104 @@
+/* pages/bills/bills.wxss */
+
+page{
+  padding-bottom: calc(constant(safe-area-inset-bottom)+170rpx);
+  padding-bottom: calc(env(safe-area-inset-bottom)+170rpx);
+  background-color: rgba(135,210,212,.3);
+}
+
+.section {
+  margin-bottom: 42rpx;
+}
+
+.section-header {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 150rpx;
+  margin-bottom: 20rpx;
+  margin-left: 50rpx;
+}
+
+.section-list .item {
+  width: 90%;
+  margin-left: 40rpx;
+  margin-bottom: 100rpx;
+  display: flex;
+  border-radius: 20rpx;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-list .item:last-child {
+  margin-bottom: 20rpx;
+}
+
+.item image {
+  width: 158rpx;
+  height: 158rpx;
+  margin-top: 22rpx;
+  margin-left: 10rpx;
+  margin-right: 22rpx;
+  flex-shrink: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-bottom: 30rpx;
+}
+
+.info .name {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.description {
+  color: gray;
+  font-size: 25rpx;
+  margin-bottom: 15rpx;
+}
+
+.price {
+  margin-top: 20rpx;
+  color: #721e10;
+  font-size: 32rpx;
+}
+
+.add-icon {
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  align-self: flex-end;
+  margin-right: 40rpx;
+  margin-top: -50rpx;
+}
+
+.add-icon image{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0;
+  margin-top: -60rpx;
+}
+
+.box{
+  height: 350rpx;
+ display: flex;
+ justify-content: flex-end;
+}
+
+.buy{
+  width: 220rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background-color: #4687d6;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27rpx;
+  font-weight: bold;
+  margin-top: 10rpx;
+  margin-right: 40rpx;
+}
+
