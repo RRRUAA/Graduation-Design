@@ -6,7 +6,6 @@ App({
     logs.unshift(Date.now())
 
     wx.setStorageSync('isLogin', false);
-    wx.setStorageSync('name', false);
     wx.setStorageSync('money', 100);
     wx.setStorageSync('note', 12.3);
     wx.setStorageSync('isSignin', false);

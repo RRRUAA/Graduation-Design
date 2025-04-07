@@ -6,6 +6,7 @@ Page({
     money: '',
     note: '40',
     mobile: '',
+    avatarUrl: '',
     actions: [{
         name: '电话客服18261109608',
       },
@@ -23,11 +24,15 @@ Page({
       })
     }
 
-    const mobile = wx.getStorageSync('name')
+    const userInfo = wx.getStorageSync('userInfo');
+    const mobile = userInfo ? userInfo.nickName : '';
+    const avatarUrl = userInfo ? userInfo.avatarUrl : '';
     this.setData({
       mobile
     })
-
+    this.setData({
+      avatarUrl
+    })
     const isLogin = wx.getStorageSync('isLogin')
     this.setData({
       isLogin,
@@ -121,7 +126,6 @@ Page({
   exit() {
     if (wx.getStorageSync('isLogin')) {
       wx.setStorageSync('isLogin', false)
-      wx.setStorageSync('name', false)
       wx.setStorageSync('newArray', [])
       wx.setStorageSync('isSignin', false);
       wx.switchTab({

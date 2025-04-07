@@ -5,9 +5,9 @@
   <!-- 会员卡片 -->
   <view class="member-area">
     <view class="vip-box">
-      <image src="{{isLogin?'/imgs/mine/宅基.png':'/imgs/mine/未登录.png'}}" mode="" />
+      <image src="{{isLogin?avatarUrl:'/imgs/mine/未登录.png'}}" mode="" />
       <view class="meta">
-        <view class="title">{{isLogin?'羽祈':'尊敬的用户'}}</view>
+        <view class="title">{{isLogin?mobile:'尊敬的用户'}}</view>
         <!-- <progress-bar value="{{progress}}" width="350rpx"></progress-bar> -->
         <view class="track">
           <view wx:if="{{isLogin}}" class="bar" style="width: 33%;"></view>
