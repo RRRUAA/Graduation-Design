@@ -8,10 +8,7 @@
     </view>
     <view class="header-middle">授权登录</view>
   </view>
-  <button style="width: 270px;" class="footer" bindtap="login">
+  <button open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" style="width: 270px;" class="footer">
     <van-icon name="wechat" size="17px" custom-style="margin-right: 3px"/>授权用户信息
   </button>
 </view>
-
-
- 

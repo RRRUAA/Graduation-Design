@@ -7,7 +7,7 @@
     <view class="vip-box">
       <image src="{{isLogin?avatarUrl:'/imgs/mine/未登录.png'}}" mode="" />
       <view class="meta">
-        <view class="title">{{isLogin?mobile:'尊敬的用户'}}</view>
+        <view class="title">{{isLogin?'尊敬的用户':'登录获更多会员权益'}}</view>
         <!-- <progress-bar value="{{progress}}" width="350rpx"></progress-bar> -->
         <view class="track">
           <view wx:if="{{isLogin}}" class="bar" style="width: 33%;"></view>

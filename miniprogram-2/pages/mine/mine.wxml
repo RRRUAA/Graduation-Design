@@ -2,7 +2,7 @@
   <view class="user-area">
     <view class="user-box">
       <image class="avatar" src="{{isLogin?avatarUrl:'/imgs/mine/未登录.png'}}"></image>
-      <view class="name">{{ isLogin ? mobile :  '登录获更多会员权益'}}</view>
+      <view class="name">{{ isLogin ? '尊敬的用户' :  '登录获更多会员权益'}}</view>
     </view>
     <view wx:if="{{ !isLogin }}" class="login-btn" bindtap="login">登录</view>
     <view wx:if="{{ isLogin }}" class="login-btn" bindtap="signin">签到</view>
