@@ -1,9 +1,14 @@
-// pages/bills/buy/index.js
+function formatDate(timestamp) {
+  const date = new Date(timestamp);
+  return `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+}
+
 Page({
   data: {
     totalPrice: 0, // 用于存储总价格
     addressList: [],
     radio: '1',
+    openid: ''
   },
 
   onShow() {
@@ -45,16 +50,27 @@ Page({
       })
     } else {
       let money = wx.getStorageSync('money')
-      if (money < this.data.totalPrice/100) {
+      if (money < this.data.totalPrice / 100) {
         wx.showToast({
           title: '余额不足',
           icon: 'none', // 图标，可选值：'success', 'loading', 'none'
           duration: 1000 // 提示持续时间，单位毫秒
         })
       } else {
-        money = money - this.data.totalPrice/100
+        money = money - this.data.totalPrice / 100
         wx.setStorageSync('money', money)
- 
+        const currentDate = formatDate(Date.now());
+        const newArray = wx.getStorageSync('newArray');
+        const userInfo = wx.getStorageSync('userInfo');
+        wx.cloud.callFunction({
+          name: "bills",
+          data: {
+            date: currentDate,
+            openid: userInfo.openid,
+            addressList: this.data.addressList,
+            newArray: newArray
+          }
+        })
         wx.switchTab({
           url: '/pages/bills/bills',
         })

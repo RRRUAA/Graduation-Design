@@ -15,27 +15,31 @@ Page({
   },
 
   onChooseAvatar(e) {
-    const { avatarUrl } = e.detail
-    this.setData({ avatarUrl })
-    
+    const {
+      avatarUrl
+    } = e.detail
+    this.setData({
+      avatarUrl
+    })
+
     const that = this
     wx.cloud.callFunction({
       name: "login",
       success: res => {
-        that.setData({ openid: res.result.openid })
-        
-        // 修改这里：在前端转换时间戳
+        that.setData({
+          openid: res.result.openid
+        })
         const currentDate = formatDate(Date.now());
         wx.cloud.callFunction({
           name: "database",
           data: {
-            date: currentDate,  // 使用格式化后的日期
+            date: currentDate, 
             openid: res.result.openid
           }
         })
-        
+
         // 更新本地存储的用户信息
-        that.setData({ 
+        that.setData({
           userInfo: {
             ...that.data.userInfo,
             avatarUrl: that.data.avatarUrl,
