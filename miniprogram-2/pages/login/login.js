@@ -2,20 +2,40 @@ const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia0
 
 Page({
   data: {
-    userInfo: null,     // 新增用户信息存储字段
+    userinfo: {},
+    openid: "",
     avatarUrl: defaultAvatarUrl,
-    showDialog: false   // 新增授权提示对话框状态
+    showDialog: false // 新增授权提示对话框状态
   },
 
   onChooseAvatar(e) {
-    const { avatarUrl } = e.detail 
-    console.log(e.detail);
+    const {
+      avatarUrl
+    } = e.detail
     this.setData({
       avatarUrl,
     })
+
+    const that = this
+    wx.cloud.callFunction({
+      name: "login",
+      success: res => {
+        console.log("云函数调用成功")
+        that.setData({
+          openid: res.result.openid,
+          userinfo: e.detail.userInfo
+        })
+        console.log("openid", that.data.openid)
+        console.log("userinfo", that.data.userinfo)
+      },
+      fail: res => {
+        console.log("云函数调用失败")
+      }
+    })
+
     wx.navigateBack();
     wx.setStorageSync('isLogin', true)
-    wx.setStorageSync('userInfo', e.detail )
+    wx.setStorageSync('userInfo', e.detail)
   },
 
   goBack() {
