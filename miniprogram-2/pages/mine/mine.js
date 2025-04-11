@@ -5,7 +5,6 @@ Page({
     isLogin: '',
     money: '',
     note: '40',
-    mobile: '',
     avatarUrl: '',
     actions: [{
         name: '电话客服18261109608',
@@ -25,11 +24,8 @@ Page({
     }
 
     const userInfo = wx.getStorageSync('userInfo');
-    const mobile = userInfo ? userInfo.nickName : '';
     const avatarUrl = userInfo ? userInfo.avatarUrl : '';
-    this.setData({
-      mobile
-    })
+
     this.setData({
       avatarUrl
     })

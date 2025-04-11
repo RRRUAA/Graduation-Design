@@ -3,7 +3,6 @@ import Dialog from '@vant/weapp/dialog/dialog';
 Page({
   data: {
     isLogin: '',
-    mobile: '',
     avatarUrl:'',
     swiperList: [{
         imageUri: '/imgs/authLoginbg.jpg',
@@ -60,11 +59,7 @@ Page({
       isLogin,
     })
     const userInfo = wx.getStorageSync('userInfo');
-    const mobile = userInfo ? userInfo.nickName : '';
     const avatarUrl = userInfo ? userInfo.avatarUrl : '';
-    this.setData({
-      mobile
-    })
     this.setData({
       avatarUrl
     })

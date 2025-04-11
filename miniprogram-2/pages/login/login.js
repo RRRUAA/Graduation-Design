@@ -1,41 +1,54 @@
 const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
 
+// 新增日期格式化方法
+function formatDate(timestamp) {
+  const date = new Date(timestamp);
+  return `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+}
+
 Page({
   data: {
-    userinfo: {},
     openid: "",
     avatarUrl: defaultAvatarUrl,
+    userInfo: {},
     showDialog: false // 新增授权提示对话框状态
   },
 
   onChooseAvatar(e) {
-    const {
-      avatarUrl
-    } = e.detail
-    this.setData({
-      avatarUrl,
-    })
-
+    const { avatarUrl } = e.detail
+    this.setData({ avatarUrl })
+    
     const that = this
     wx.cloud.callFunction({
       name: "login",
       success: res => {
-        console.log("云函数调用成功")
-        that.setData({
-          openid: res.result.openid,
-          userinfo: e.detail.userInfo
+        that.setData({ openid: res.result.openid })
+        
+        // 修改这里：在前端转换时间戳
+        const currentDate = formatDate(Date.now());
+        wx.cloud.callFunction({
+          name: "database",
+          data: {
+            date: currentDate,  // 使用格式化后的日期
+            openid: res.result.openid
+          }
         })
-        console.log("openid", that.data.openid)
-        console.log("userinfo", that.data.userinfo)
-      },
-      fail: res => {
-        console.log("云函数调用失败")
+        
+        // 更新本地存储的用户信息
+        that.setData({ 
+          userInfo: {
+            ...that.data.userInfo,
+            avatarUrl: that.data.avatarUrl,
+            openid: res.result.openid,
+            loginTime: currentDate // 新增登录时间字段
+          }
+        })
+        wx.setStorageSync('userInfo', that.data.userInfo)
       }
     })
 
-    wx.navigateBack();
     wx.setStorageSync('isLogin', true)
-    wx.setStorageSync('userInfo', e.detail)
+    wx.navigateBack()
   },
 
   goBack() {
