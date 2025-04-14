@@ -67,8 +67,7 @@ Page({
         duration: 1000 // 提示持续时间，单位毫秒
       })
       wx.setStorageSync('isSignin', true);
-    }
-    else{
+    } else {
       wx.showToast({
         title: '您今日已完成签到', // 提示内容
         icon: 'none', // 图标，可选值：'success', 'loading', 'none'
@@ -123,7 +122,6 @@ Page({
     if (wx.getStorageSync('isLogin')) {
       wx.setStorageSync('isLogin', false)
       wx.setStorageSync('newArray', [])
-      wx.setStorageSync('isSignin', false);
       wx.switchTab({
         url: '/pages/home/home'
       });

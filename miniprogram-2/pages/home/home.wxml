@@ -33,9 +33,9 @@
   </view>
 
   <view class="banner-list">
-    <image class="banner" src="https://7969-yixiantang-8gfkymtadf6b7244-1339880437.tcb.qcloud.la/weda-uploader/CC94B8387F16924FC63BE334AB34BB51.png?sign=e7173b0f69175a1bd28d904c2dae6673&t=1740127764" mode="" bindtap="showDialog" />
-    <image class="banner" src="https://7969-yixiantang-8gfkymtadf6b7244-1339880437.tcb.qcloud.la/weda-uploader/BA70B88BE0D3151EC486FF03DAB9FF67.png?sign=447f995f48cce8bc2c610bd5012e7e6e&t=1740127759" mode="" bindtap="gotodiscount" />
-    <image class="banner" src="https://7969-yixiantang-8gfkymtadf6b7244-1339880437.tcb.qcloud.la/weda-uploader/5E5A22FBE9CC96C5650B9068110A3496.png?sign=139c5e63eb8272d3821307a2f9853fe1&t=1740127752" mode="" bindtap="onDisplay" />
+    <image class="banner" src="/imgs/home/礼物.png" mode="" bindtap="showDialog" />
+    <image class="banner" src="/imgs/home/旗子.png" mode="" bindtap="gotodiscount" />
+    <image class="banner" src="/imgs/home/日历.png" mode="" bindtap="onDisplay" />
   </view>
 </view>
 

@@ -231,7 +231,7 @@ Page({
         wx.showToast({
           title: '添加成功', // 提示内容
           icon: 'success', // 图标，可选值：'success', 'loading', 'none'
-          duration: 1000 // 提示持续时间，单位毫秒
+          duration: 700 // 提示持续时间，单位毫秒
         })
         switch (from) {
           case "specialList":
