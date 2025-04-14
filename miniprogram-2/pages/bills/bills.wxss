@@ -1,9 +1,9 @@
 /* pages/bills/bills.wxss */
 
-page{
+page {
   padding-bottom: calc(constant(safe-area-inset-bottom)+170rpx);
   padding-bottom: calc(env(safe-area-inset-bottom)+170rpx);
-  background-color: rgba(135,210,212,.3);
+  background-color: rgba(135, 210, 212, .3);
 }
 
 .section {
@@ -74,20 +74,20 @@ page{
   margin-top: -50rpx;
 }
 
-.add-icon image{
+.add-icon image {
   width: 60rpx;
   height: 60rpx;
   margin: 0;
   margin-top: -60rpx;
 }
 
-.box{
+.box {
   height: 350rpx;
- display: flex;
- justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.buy{
+.buy {
   width: 220rpx;
   height: 80rpx;
   border-radius: 50rpx;
@@ -101,4 +101,3 @@ page{
   margin-top: 10rpx;
   margin-right: 40rpx;
 }
-

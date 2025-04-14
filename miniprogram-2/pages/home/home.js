@@ -3,7 +3,7 @@ import Dialog from '@vant/weapp/dialog/dialog';
 Page({
   data: {
     isLogin: '',
-    avatarUrl:'',
+    avatarUrl: '',
     swiperList: [{
         imageUri: '/imgs/authLoginbg.jpg',
         type: 'url',
@@ -34,7 +34,7 @@ Page({
     },
 
     show: false,
-    minDate: new Date(2025, new Date().getMonth(), 1).getTime(),    
+    minDate: new Date(2025, new Date().getMonth(), 1).getTime(),
     maxDate: new Date(2025, new Date().getMonth(), new Date().getDate()).getTime(),
     current: 0
   },

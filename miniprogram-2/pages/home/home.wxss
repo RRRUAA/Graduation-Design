@@ -1,4 +1,3 @@
-
 page {
   padding-bottom: calc(constant(safe-area-inset-bottom)+170rpx);
   padding-bottom: calc(env(safe-area-inset-bottom)+170rpx);
@@ -139,7 +138,7 @@ page {
   border-radius: 16rpx;
 }
 
-.track{
+.track {
   background-color: #ebebeb;
   height: 7rpx;
   border-radius: 6rpx;
@@ -147,7 +146,7 @@ page {
   overflow: hidden;
 }
 
-.bar{
+.bar {
   background-color: green;
   height: 100%;
   width: 0%;

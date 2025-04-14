@@ -1,7 +1,7 @@
 <view class="header" style="{{ headerStyle }}">
   <view class="search-input">
     <image class="search-icon" src="/imgs/menu/搜索.png"></image>
-    <input placeholder="搜索功能暂未开放" bindinput="handleInput"/>
+    <input placeholder="搜索功能暂未开放" bindinput="handleInput" />
   </view>
 </view>
 
@@ -24,19 +24,19 @@
 </view>
 
 <view class="menu">
-  <scroll-view class="sidebar" scroll-y show-scrollbar="{{ false }}" enhanced	>
-  <view wx:for="{{ list }}" wx:key="index" class="sidebar-item {{ index == current ? 'active': '' }}" bindtap="switch" data-current="{{ index }}">
-    <image class="item-icon" src="{{ item.icon }}"></image>
-    <view class="item-label">{{ item.name }}</view>
-    <view wx:if="{{ index == current }}" class="left-line"></view>
-  </view>
-</scroll-view>
-  
+  <scroll-view class="sidebar" scroll-y show-scrollbar="{{ false }}" enhanced>
+    <view wx:for="{{ list }}" wx:key="index" class="sidebar-item {{ index == current ? 'active': '' }}" bindtap="switch" data-current="{{ index }}">
+      <image class="item-icon" src="{{ item.icon }}"></image>
+      <view class="item-label">{{ item.name }}</view>
+      <view wx:if="{{ index == current }}" class="left-line"></view>
+    </view>
+  </scroll-view>
+
   <scroll-view class="menu-list" scroll-y show-scrollbar="{{false}}" enhanced>
     <force-swiper list="{{ swiperList }}" dots-style="left: 50%; "></force-swiper>
     <view class="list">
 
-    <!-- 特色 -->
+      <!-- 特色 -->
       <view wx:if="{{current=='0'}}" class="section">
         <view class="section-header">
           特色餐品
@@ -56,8 +56,8 @@
         </view>
       </view>
 
-    <!-- 主食 -->
-    <view wx:if="{{current=='1'}}" class="section">
+      <!-- 主食 -->
+      <view wx:if="{{current=='1'}}" class="section">
         <view class="section-header">
           主食餐品
         </view>
@@ -76,8 +76,8 @@
         </view>
       </view>
 
-          <!-- 甜点 -->
-          <view wx:if="{{current=='2'}}" class="section">
+      <!-- 甜点 -->
+      <view wx:if="{{current=='2'}}" class="section">
         <view class="section-header">
           饭后甜点
         </view>
@@ -96,8 +96,8 @@
         </view>
       </view>
 
-          <!-- 饮品 -->
-          <view wx:if="{{current=='3'}}" class="section">
+      <!-- 饮品 -->
+      <view wx:if="{{current=='3'}}" class="section">
         <view class="section-header">
           饮料酒水
         </view>

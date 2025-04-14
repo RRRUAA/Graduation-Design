@@ -50,17 +50,34 @@ Page({
       })
     } else {
       let money = wx.getStorageSync('money')
-      if (money < this.data.totalPrice / 100) {
+      let note = wx.getStorageSync('note')
+      if (money + note < this.data.totalPrice / 100) {
         wx.showToast({
           title: '余额不足',
           icon: 'none', // 图标，可选值：'success', 'loading', 'none'
           duration: 1000 // 提示持续时间，单位毫秒
         })
       } else {
-        money = money - this.data.totalPrice / 100
+        if (money >= this.data.totalPrice / 100) {
+          money -= this.data.totalPrice / 100;
+        } else {
+          note -= this.data.totalPrice / 100 - money;
+          money = 0;
+        }
         wx.setStorageSync('money', money)
+        wx.setStorageSync('note', note)
         const currentDate = formatDate(Date.now());
         const newArray = wx.getStorageSync('newArray');
+
+        // 新增过滤逻辑：只保留 name 和 num
+        const filteredArray = newArray.map(({
+          name,
+          num
+        }) => ({
+          name,
+          num
+        }));
+
         const userInfo = wx.getStorageSync('userInfo');
         wx.cloud.callFunction({
           name: "bills",
@@ -68,9 +85,12 @@ Page({
             date: currentDate,
             openid: userInfo.openid,
             addressList: this.data.addressList,
-            newArray: newArray
+            newArray: filteredArray // 使用过滤后的数组
           }
         })
+
+        wx.setStorageSync('newArray', [])
+        wx.setStorageSync('judge', true)
         wx.switchTab({
           url: '/pages/bills/bills',
         })

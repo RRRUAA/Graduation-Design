@@ -29,7 +29,6 @@ Page({
       }
     ],
 
-
     swiperList: [{
         imageUri: '/imgs/authLoginbg.jpg',
         type: 'url',
@@ -48,133 +47,13 @@ Page({
       }
     ],
 
-    specialList: [{
-        url: '/imgs/menu/鸡蛋.png',
-        name: '鸡蛋',
-        description: '高蛋白，高营养',
-        from: 'specialList',
-        number: '0',
-        price: '$1.5',
-        num: '1',
-        isadded: false
-      },
-      {
-        url: '/imgs/menu/饺子.png',
-        name: '饺子',
-        description: '驴肉馅饺子',
-        from: 'specialList',
-        number: '1',
-        price: '$3',
-        num: '1',
-        isadded: false
-      },
-      {
-        url: '/imgs/menu/小炒.png',
-        name: '小炒',
-        description: '特色凉菜小炒',
-        from: 'specialList',
-        number: '2',
-        price: '$5',
-        num: '1',
-        isadded: false
-      },
-    ],
+    specialList: [],
 
-    mainList: [{
-        url: '/imgs/menu/鸡.png',
-        name: '烤鸡',
-        description: '正宗白羽鸡',
-        from: 'mainList',
-        number: '0',
-        price: '$30',
-        num: '1',
-        isadded: false
-      },
-      {
-        url: '/imgs/menu/米饭.png',
-        name: '米饭',
-        description: '东北好米',
-        from: 'mainList',
-        number: '1',
-        price: '$2',
-        num: '1',
-        isadded: false
-      },
-      {
-        url: '/imgs/menu/鱼.png',
-        name: '鱼',
-        description: '年年有“鱼”',
-        from: 'mainList',
-        number: '2',
-        price: '$30',
-        num: '1',
-        isadded: false
-      },
-    ],
+    mainList: [],
 
-    sweetList: [{
-        url: '/imgs/menu/茶点.png',
-        name: '茶点',
-        description: '一笼三个',
-        from: 'sweetList',
-        number: '0',
-        price: '$10',
-        num: '1',
-        isadded: false
-      },
-      {
-        url: '/imgs/menu/水果.png',
-        name: '水果拼盘',
-        description: '西瓜+葡萄+哈密瓜',
-        from: 'sweetList',
-        number: '1',
-        price: '$25',
-        num: '1',
-        isadded: false
-      },
-      {
-        url: '/imgs/menu/香肠.png',
-        name: '香肠',
-        description: '慕尼黑香肠',
-        from: 'sweetList',
-        number: '2',
-        price: '$2',
-        num: '1',
-        isadded: false
-      },
-    ],
+    sweetList: [],
 
-    drinkList: [{
-        url: '/imgs/menu/冷饮.png',
-        name: '橙汁',
-        description: 'orange juice！',
-        from: 'drinkList',
-        number: '0',
-        price: '$4',
-        num: '1',
-        isadded: false
-      },
-      {
-        url: '/imgs/menu/啤酒.png',
-        name: '啤酒',
-        description: '青岛雪花啤酒',
-        from: 'drinkList',
-        number: '1',
-        price: '$18',
-        num: '1',
-        isadded: false
-      },
-      {
-        url: '/imgs/menu/热饮.png',
-        name: '茶',
-        description: '龙井茶',
-        from: 'drinkList',
-        number: '2',
-        price: '$18',
-        num: '1',
-        isadded: false
-      },
-    ],
+    drinkList: [],
 
   },
 
@@ -184,6 +63,188 @@ Page({
         selected: 1
       })
     }
+
+    if (wx.getStorageSync('judge')) {
+      wx.cloud.callFunction({
+        name: "specialList",
+        success: res => {
+          this.setData({
+            specialList: res.result.data.map((item, index) => ({
+              ...item,
+              num: "1",
+              from: "specialList",
+              number: index.toString(),
+              isadded: false,
+            }))
+          });
+        },
+        fail: err => {
+          console.error('云函数调用失败:', err);
+          wx.showToast({
+            title: '网络异常，请重试',
+            icon: 'none'
+          });
+        },
+      });
+
+      wx.cloud.callFunction({
+        name: "mainList",
+        success: res => {
+          this.setData({
+            mainList: res.result.data.map((item, index) => ({
+              ...item,
+              num: "1",
+              from: "mainList",
+              number: index.toString(),
+              isadded: false,
+            }))
+          });
+        },
+        fail: err => {
+          console.error('云函数调用失败:', err);
+          wx.showToast({
+            title: '网络异常，请重试',
+            icon: 'none'
+          });
+        },
+      });
+
+      wx.cloud.callFunction({
+        name: "sweetList",
+        success: res => {
+          this.setData({
+            sweetList: res.result.data.map((item, index) => ({
+              ...item,
+              num: "1",
+              from: "sweetList",
+              number: index.toString(),
+              isadded: false,
+            }))
+          });
+        },
+        fail: err => {
+          console.error('云函数调用失败:', err);
+          wx.showToast({
+            title: '网络异常，请重试',
+            icon: 'none'
+          });
+        },
+      });
+
+      wx.cloud.callFunction({
+        name: "drinkList",
+        success: res => {
+          this.setData({
+            drinkList: res.result.data.map((item, index) => ({
+              ...item,
+              num: "1",
+              from: "drinkList",
+              number: index.toString(),
+              isadded: false,
+            }))
+          });
+        },
+        fail: err => {
+          console.error('云函数调用失败:', err);
+          wx.showToast({
+            title: '网络异常，请重试',
+            icon: 'none'
+          });
+        },
+      });
+
+      wx.setStorageSync('judge', false)
+    }
+  },
+
+  onLoad() {
+    wx.cloud.callFunction({
+      name: "specialList",
+      success: res => {
+        this.setData({
+          specialList: res.result.data.map((item, index) => ({
+            ...item,
+            num: "1",
+            from: "specialList",
+            number: index.toString(),
+            isadded: false,
+          }))
+        });
+      },
+      fail: err => {
+        console.error('云函数调用失败:', err);
+        wx.showToast({
+          title: '网络异常，请重试',
+          icon: 'none'
+        });
+      },
+    });
+
+    wx.cloud.callFunction({
+      name: "mainList",
+      success: res => {
+        this.setData({
+          mainList: res.result.data.map((item, index) => ({
+            ...item,
+            num: "1",
+            from: "mainList",
+            number: index.toString(),
+            isadded: false,
+          }))
+        });
+      },
+      fail: err => {
+        console.error('云函数调用失败:', err);
+        wx.showToast({
+          title: '网络异常，请重试',
+          icon: 'none'
+        });
+      },
+    });
+
+    wx.cloud.callFunction({
+      name: "sweetList",
+      success: res => {
+        this.setData({
+          sweetList: res.result.data.map((item, index) => ({
+            ...item,
+            num: "1",
+            from: "sweetList",
+            number: index.toString(),
+            isadded: false,
+          }))
+        });
+      },
+      fail: err => {
+        console.error('云函数调用失败:', err);
+        wx.showToast({
+          title: '网络异常，请重试',
+          icon: 'none'
+        });
+      },
+    });
+
+    wx.cloud.callFunction({
+      name: "drinkList",
+      success: res => {
+        this.setData({
+          drinkList: res.result.data.map((item, index) => ({
+            ...item,
+            num: "1",
+            from: "drinkList",
+            number: index.toString(),
+            isadded: false,
+          }))
+        });
+      },
+      fail: err => {
+        console.error('云函数调用失败:', err);
+        wx.showToast({
+          title: '网络异常，请重试',
+          icon: 'none'
+        });
+      },
+    });
   },
 
   switch (e) {
@@ -268,5 +329,4 @@ Page({
       }
     }
   }
-
 })

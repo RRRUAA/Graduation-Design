@@ -8,7 +8,7 @@
       <view class="info">
         <view class="name">{{item.name}}</view>
         <view class="description">{{item.description}}</view>
-        <van-stepper value="{{ 1 }}" value="{{ item.num }}" bind:change="onChange" input-width="50rpx" button-size="40rpx" data-index="{{index}}" disable-input="true" integer/>
+        <van-stepper value="{{ 1 }}" value="{{ item.num }}" bind:change="onChange" input-width="50rpx" button-size="40rpx" data-index="{{index}}" disable-input="true" integer />
         <view class="price">{{item.price}} </view>
         <view class="add-icon" bind:tap="minus" data-name="{{item.name}}">
           <image src="/imgs/cart/减号.png" mode="" />

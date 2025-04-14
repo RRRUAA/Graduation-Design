@@ -9,9 +9,6 @@
     <view class="header-middle">新添地址</view>
   </view>
 
-
-
-
   <view class="list-items">
     <view class="item" bindtap="gotobind">
       <view class="content">
@@ -30,7 +27,7 @@
         <view class="label">选择市区</view>
         <!-- 选择市区 -->
         <van-dropdown-menu>
-          <van-dropdown-item value="{{ value }}" options="{{ option }}"  bind:change="onDropdownChange"/>
+          <van-dropdown-item value="{{ value }}" options="{{ option }}" bind:change="onDropdownChange" />
         </van-dropdown-menu>
       </view>
     </view>

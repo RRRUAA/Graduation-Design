@@ -12,7 +12,6 @@ Page({
   },
 
   createHandle() {
-
     wx.navigateTo({
       url: '/pages/mine/add/index'
     });

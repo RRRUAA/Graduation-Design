@@ -122,6 +122,7 @@ Page({
     if (wx.getStorageSync('isLogin')) {
       wx.setStorageSync('isLogin', false)
       wx.setStorageSync('newArray', [])
+      wx.setStorageSync('judge', true)
       wx.switchTab({
         url: '/pages/home/home'
       });

@@ -1,7 +1,7 @@
 /* pages/about/about.wxss */
 
-page{
+page {
   padding-bottom: calc(constant(safe-area-inset-bottom)+170rpx);
   padding-bottom: calc(env(safe-area-inset-bottom)+170rpx);
-  background-color: rgba(174,168,219,.3);
+  background-color: rgba(174, 168, 219, .3);
 }

@@ -40,5 +40,5 @@
 </view>
 
 
-<van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}"/>
+<van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" />
 <van-dialog id="van-dialog" />

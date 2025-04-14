@@ -1,8 +1,8 @@
-  page{
+  page {
     background: linear-gradient(to bottom, #f1d5d5, #f1d5dc);
   }
 
-  .container{
+  .container {
     background-color: #f8f8f8;
     margin-left: 25rpx;
     margin-top: 100rpx;
@@ -10,16 +10,23 @@
     height: 1200rpx;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 0 50rpx 50rpx 0;
-    display: flex; /* 启用 Flex 布局 */
-    flex-direction: column; /* 竖直排列子元素 */
-    justify-content: space-between; /* 竖直方向均匀分布 */
-    align-items: flex-start; /* 水平方向靠左对齐 */
+    display: flex;
+    /* 启用 Flex 布局 */
+    flex-direction: column;
+    /* 竖直排列子元素 */
+    justify-content: space-between;
+    /* 竖直方向均匀分布 */
+    align-items: flex-start;
+    /* 水平方向靠左对齐 */
   }
 
-  .title{
-    display: flex; /* 启用 Flex 布局 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+  .title {
+    display: flex;
+    /* 启用 Flex 布局 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
     background-color: #fc9898;
     color: #f8f8f8;
     font-weight: bold;
@@ -30,49 +37,58 @@
   }
 
   .item {
-    display: flex; /* 启用 Flex 布局 */
-    margin: 50rpx 0; /* 子元素之间的间距 */
+    display: flex;
+    /* 启用 Flex 布局 */
+    margin: 50rpx 0;
+    /* 子元素之间的间距 */
   }
 
-  .time{
+  .time {
     margin-top: -80rpx;
     width: 100%;
   }
 
-  .discount{
+  .discount {
     width: 100%;
   }
 
-  .vip{
+  .vip {
     margin-bottom: -20rpx;
     width: 100%;
   }
 
-  .box{
-    display: flex; /* 启用 Flex 布局 */
-    flex-direction: column; /* 竖直排列子元素 */
-    justify-content: space-between; /* 竖直方向均匀分布 */
-    align-items: flex-start; /* 水平方向靠左对齐 */
+  .box {
+    display: flex;
+    /* 启用 Flex 布局 */
+    flex-direction: column;
+    /* 竖直排列子元素 */
+    justify-content: space-between;
+    /* 竖直方向均匀分布 */
+    align-items: flex-start;
+    /* 水平方向靠左对齐 */
   }
 
-  .data{
+  .data {
     background-color: #6ba9f5;
     color: #f8f8f8;
     font-weight: bold;
     width: 200rpx;
     height: 50rpx;
-    display: flex; /* 启用 Flex 布局 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+    display: flex;
+    /* 启用 Flex 布局 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
     border-radius: 40rpx;
     margin-bottom: 25rpx;
     margin-left: 30rpx;
   }
 
-  .text{
+  .text {
     margin-left: 25rpx;
   }
 
-  .discount_text{
+  .discount_text {
     margin-bottom: 10rpx;
   }
