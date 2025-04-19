@@ -10,7 +10,8 @@ exports.main = async (event) => {
     // 查询所有包含目标字段的文档
     const res = await db.collection('bills')
       .field({ // 指定返回字段
-        date: true
+        date: true,
+        state: true
       })
       .get()
 

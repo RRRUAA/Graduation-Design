@@ -1,4 +1,3 @@
-
 <view class="container">
   <image src="https://static.igem.wiki/teams/5217/image/yellow.png" mode="aspectFill" class="background-image"></image>
   <view class="header-nav" style="height: 93px;">
@@ -40,7 +39,7 @@
           </view>
           <view class="cnm" wx:for="{{bills}}" wx:key="index" wx:for-item="item">
             <view>{{item.date}}</view>
-            <view style="margin-right: 65rpx;">配送中</view>
+            <view style="margin-right: 65rpx;">{{item.state ? '已完成' : '配送中'}}</view>
           </view>
         </view>
       </scroll-view>

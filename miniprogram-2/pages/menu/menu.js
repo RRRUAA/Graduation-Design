@@ -71,7 +71,7 @@ Page({
           this.setData({
             specialList: res.result.data.map((item, index) => ({
               ...item,
-              num: "1",
+              num: 1,
               from: "specialList",
               number: index.toString(),
               isadded: false,
@@ -93,7 +93,7 @@ Page({
           this.setData({
             mainList: res.result.data.map((item, index) => ({
               ...item,
-              num: "1",
+              num: 1,
               from: "mainList",
               number: index.toString(),
               isadded: false,
@@ -115,7 +115,7 @@ Page({
           this.setData({
             sweetList: res.result.data.map((item, index) => ({
               ...item,
-              num: "1",
+              num: 1,
               from: "sweetList",
               number: index.toString(),
               isadded: false,
@@ -137,7 +137,7 @@ Page({
           this.setData({
             drinkList: res.result.data.map((item, index) => ({
               ...item,
-              num: "1",
+              num: 1,
               from: "drinkList",
               number: index.toString(),
               isadded: false,
@@ -164,7 +164,7 @@ Page({
         this.setData({
           specialList: res.result.data.map((item, index) => ({
             ...item,
-            num: "1",
+            num: 1,
             from: "specialList",
             number: index.toString(),
             isadded: false,
@@ -186,7 +186,7 @@ Page({
         this.setData({
           mainList: res.result.data.map((item, index) => ({
             ...item,
-            num: "1",
+            num: 1,
             from: "mainList",
             number: index.toString(),
             isadded: false,
@@ -208,7 +208,7 @@ Page({
         this.setData({
           sweetList: res.result.data.map((item, index) => ({
             ...item,
-            num: "1",
+            num: 1,
             from: "sweetList",
             number: index.toString(),
             isadded: false,
@@ -230,7 +230,7 @@ Page({
         this.setData({
           drinkList: res.result.data.map((item, index) => ({
             ...item,
-            num: "1",
+            num: 1,
             from: "drinkList",
             number: index.toString(),
             isadded: false,

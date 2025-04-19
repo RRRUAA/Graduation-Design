@@ -13,7 +13,8 @@ exports.main = async (event, context) => {
         date: event.date,
         openid: event.openid,
         addressList: event.addressList,
-        newArray: event.newArray
+        newArray: event.newArray,
+        state: event.state
       }
     })
   } catch (e) {

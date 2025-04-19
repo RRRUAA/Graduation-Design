@@ -85,7 +85,8 @@ Page({
             date: currentDate,
             openid: userInfo.openid,
             addressList: this.data.addressList,
-            newArray: filteredArray 
+            newArray: filteredArray,
+            state: false
           }
         })
 
