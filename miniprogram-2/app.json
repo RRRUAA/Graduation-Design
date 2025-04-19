@@ -9,6 +9,7 @@
     "pages/mine/bind/index",
     "pages/mine/address/index",
     "pages/mine/add/index",
+    "pages/mine/my_bills/index",
     "pages/home/discount/index",
     "pages/bills/buy/index"
   ],

@@ -39,7 +39,7 @@
       </view>
       <view class="left-arrow">></view>
     </view>
-    <view class="item" bindtap="help" data-code="agreement">
+    <view class="item" bindtap="goto_my_bills" data-code="agreement">
       <view class="content">
         <image class="icon" src="/imgs/mine/apps.png" />
         <view class="label">我的订单</view>

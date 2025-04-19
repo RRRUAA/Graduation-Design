@@ -85,7 +85,7 @@ Page({
             date: currentDate,
             openid: userInfo.openid,
             addressList: this.data.addressList,
-            newArray: filteredArray // 使用过滤后的数组
+            newArray: filteredArray 
           }
         })
 
