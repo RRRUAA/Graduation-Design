@@ -14,7 +14,7 @@
         <view class="block">
           <view class="black">{{item.name}} {{item.phone}}</view>
           <view class="gray">{{item.option}}/{{item.address}}</view>
-          <image src="/imgs/cart/减号.png" class="image" data-name="{{item.name}}" bind:tap="minus"></image>
+          <image src="/imgs/cart/减号.png" class="image" data-time="{{item.time}}" bind:tap="minus"></image>
           </view>
       </view>
     </view>

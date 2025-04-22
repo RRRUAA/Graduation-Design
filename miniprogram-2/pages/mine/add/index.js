@@ -112,11 +112,13 @@ Page({
     }
 
     // 提交逻辑
+    const time = Date.now();
     const newAddress = {
       name,
       phone,
       address,
-      option
+      option,
+      time
     };
     let addressList = wx.getStorageSync('addressList') || [];
     addressList.push(newAddress);

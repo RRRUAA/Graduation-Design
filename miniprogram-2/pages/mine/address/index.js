@@ -19,8 +19,8 @@ Page({
 
   minus(event) {
     let array = wx.getStorageSync('addressList') || [];
-    let name = event.currentTarget.dataset.name;
-    array = array.filter(item => item.name !== name);
+    let time = event.currentTarget.dataset.time;
+    array = array.filter(item => item.time !== time);
     wx.setStorageSync('addressList', array);
     wx.reLaunch({
       url: '/pages/mine/address/index' // 重新打开当前小程序，清空所有页面栈，重新打开首页
